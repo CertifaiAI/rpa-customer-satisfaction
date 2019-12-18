@@ -23,7 +23,7 @@
         "extraInputs" : { },
         "modelConfigType" : null,
         "pythonCode" : null,
-        "pythonCodePath" : "REPLACE\\scripts\\predict_exec.py",
+        "pythonCodePath" : "REPLACE\\Scripts\\predict_exec.py",
         "pythonInputs" : {
           "data_path" : "STR",
           "model_path" : "STR",

@@ -23,7 +23,7 @@
         "extraInputs" : { },
         "modelConfigType" : null,
         "pythonCode" : null,
-        "pythonCodePath" : "C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\scripts\\predict_exec.py",
+        "pythonCodePath" : "C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\Scripts\\predict_exec.py",
         "pythonInputs" : {
           "data_path" : "STR",
           "model_path" : "STR",

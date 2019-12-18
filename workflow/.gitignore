@@ -1,2 +1,3 @@
 # Ignore local distro folder
 distro/
+Output/prediction.csv
