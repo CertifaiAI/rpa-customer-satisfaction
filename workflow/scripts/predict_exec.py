@@ -14,9 +14,9 @@ import keras
 import tensorflow as tf
 
 #data_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\SampleOrder-10.csv'
-data_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\translated.csv'
-model_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\my_model2.h5'
-workspace_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction'
+#data_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\translated.csv'
+#model_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\my_model2.h5'
+#workspace_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction'
 
 # needed when dealing with multi threading
 sess = tf.Session()
@@ -132,5 +132,6 @@ modded.drop(cols2drop, axis=1, inplace=True)
 print('Running inference')
 prediction_model = keras.models.load_model(model_path)
 presult = prediction_model.predict_classes(modded)
+presult = presult.flatten()
 np.set_printoptions(threshold=sys.maxsize)
 result = str(presult)

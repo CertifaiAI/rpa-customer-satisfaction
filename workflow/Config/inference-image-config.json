@@ -23,7 +23,7 @@
         "extraInputs" : { },
         "modelConfigType" : null,
         "pythonCode" : null,
-        "pythonCodePath" : "C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\scripts\\predict_exec.py",
+        "pythonCodePath" : "C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\scripts\\predict_exec.py",
         "pythonInputs" : {
           "data_path" : "STR",
           "model_path" : "STR",
@@ -32,7 +32,7 @@
         "pythonOutputs" : {
           "result" : "STR"
         },
-        "pythonPath" : "C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\python37.zip;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\DLLs;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\lib;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda;;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\lib\\site-packages;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\lib\\site-packages\\win32;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\lib\\site-packages\\win32\\lib;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\lib\\site-packages\\Pythonwin;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\conda\\lib\\site-packages\\IPython\\extensions;C:\\\\Users\\\\zulhu\\\\Desktop\\\\rpa-ai-template\\\\rpa-ai-template\\\\customer-satisfaction-prediction\\distro\\scripts",
+        "pythonPath" : "C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\python37.zip;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\DLLs;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\lib;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda;;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\lib\\site-packages;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\lib\\site-packages\\win32;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\lib\\site-packages\\win32\\lib;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\lib\\site-packages\\Pythonwin;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\conda\\lib\\site-packages\\IPython\\extensions;C:\\\\Users\\\\zulhu\\\\Desktop\\\\skymindglobal\\\\workflow\\distro\\scripts",
         "returnAllInputs" : false,
         "tensorDataTypesConfig" : null
       }

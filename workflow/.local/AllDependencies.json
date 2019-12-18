@@ -1798,9 +1798,9 @@
     "restore": {
       "projectUniqueName": "customer-satisfaction-prediction",
       "projectName": "customer-satisfaction-prediction",
-      "projectPath": "C:\\Users\\zulhu\\Desktop\\rpa-ai-template\\rpa-ai-template\\customer-satisfaction-prediction\\.local",
+      "projectPath": "C:\\Users\\zulhu\\Desktop\\skymindglobal\\workflow\\.local",
       "packagesPath": "C:\\Users\\zulhu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zulhu\\Desktop\\rpa-ai-template\\rpa-ai-template\\customer-satisfaction-prediction\\.local"
+      "outputPath": "C:\\Users\\zulhu\\Desktop\\skymindglobal\\workflow\\.local"
     },
     "frameworks": {
       "net461": {
