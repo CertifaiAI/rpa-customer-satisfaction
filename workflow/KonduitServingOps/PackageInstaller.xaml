@@ -53,7 +53,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="PackageInstaller" sap:VirtualizedContainerService.HintSize="241.6,254.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -260,7 +259,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenApplication>
-    <Sequence DisplayName="Copy packages" sap:VirtualizedContainerService.HintSize="502.4,1235.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Copy packages" sap:VirtualizedContainerService.HintSize="502.4,969.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -275,20 +274,19 @@
           <InArgument x:TypeArguments="s:String[]">[directory.getfiles(srcPath)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,520" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[pkgList]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,387.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[pkgList]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="425.6,385.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="425.6,252.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:CopyFile ContinueOnError="{x:Null}" Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[item.ToString]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Item is : &quot; + item.ToString + System.Environment.NewLine + &quot;Dest : &quot; + destPath + Path.GetFileName(item.ToString)]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
@@ -301,20 +299,19 @@
           <InArgument x:TypeArguments="s:String[]">[directory.GetDirectories(srcPath)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,382.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[pkgList]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,249.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[pkgList]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Item is : &quot; + item.ToString + System.Environment.NewLine + &quot;Dest : &quot; + destPath + Path.GetFileName(item.ToString)]" />
-              <rt:CopyDirectory Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy Directory" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="CopyDirectory_1" Merge="True" Overwrite="False" Source="[item.ToString]" />
+              <rt:CopyDirectory Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy Directory" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="CopyDirectory_1" Merge="True" Overwrite="False" Source="[item.ToString]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
