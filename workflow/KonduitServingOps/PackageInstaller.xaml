@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PackageInstaller" this:PackageInstaller.in_workPath="C:\Users\zulhu\Desktop\test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PackageInstaller" this:PackageInstaller.in_workPath="C:\Users\zulhu\Desktop\test" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:rt="clr-namespace:Roboyo.Tools;assembly=Roboyo.Tools.CopyMoveDirectory" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_workPath" Type="InArgument(x:String)" />
   </x:Members>
@@ -60,7 +60,7 @@
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="cmdText" />
       <Variable x:TypeArguments="x:String" Default="[in_workPath+&quot;\Package&quot;]" Name="srcPath" />
-      <Variable x:TypeArguments="x:String" Default="[in_workPath+&quot;\distro\conda\Lib\site-packages&quot;]" Name="destPath" />
+      <Variable x:TypeArguments="x:String" Default="[in_workPath+&quot;\distro\conda\Lib\site-packages\&quot;]" Name="destPath" />
       <Variable x:TypeArguments="s:String[]" Name="pkgList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -74,7 +74,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1058.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524.8,2126.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="check" />
               <Variable x:TypeArguments="s:String[]" Name="textArray" />
@@ -84,7 +84,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Type Into 'cmd.exe  Command Prompt'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[&quot;cd &quot; + in_workPath + &quot;\distro\conda\condabin&quot;]">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Type Into 'cmd.exe  Command Prompt'" sap:VirtualizedContainerService.HintSize="483.2,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[&quot;cd &quot; + in_workPath + &quot;\distro\conda\condabin&quot;]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="7694b4f7789428e175340bf42eb98be5">
                   <ui:Target.TimeoutMS>
@@ -174,15 +174,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SendHotkey>
-            <DoWhile DisplayName="Check if installation is done" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+            <DoWhile DisplayName="Check if installation is done" sap:VirtualizedContainerService.HintSize="483.2,1120.8" sap2010:WorkflowViewState.IdRef="DoWhile_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <DoWhile.Condition>[Not check.Equals("C:\Users\zulhu\Desktop\test\distro\conda\condabin&gt;")]</DoWhile.Condition>
-              <Sequence sap:VirtualizedContainerService.HintSize="375.2,825.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <DoWhile.Condition>[Not check.Equals(in_workPath + "\distro\conda\condabin&gt;")]</DoWhile.Condition>
+              <Sequence sap:VirtualizedContainerService.HintSize="375.2,958.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -235,6 +235,7 @@
                   </Assign.Value>
                 </Assign>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Clipped text : &quot; + check]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;WorkPath : &quot; + in_workPath]" />
               </Sequence>
             </DoWhile>
             <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
@@ -259,7 +260,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenApplication>
-    <Sequence DisplayName="Copy packages" sap:VirtualizedContainerService.HintSize="502.4,580" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Copy packages" sap:VirtualizedContainerService.HintSize="502.4,1235.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -274,19 +275,46 @@
           <InArgument x:TypeArguments="s:String[]">[directory.getfiles(srcPath)]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,387.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[pkgList]">
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,520" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[pkgList]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="425.6,252.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="425.6,385.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[destPath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[item.ToString]" />
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[item.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Item is : &quot; + item.ToString + System.Environment.NewLine + &quot;Dest : &quot; + destPath + Path.GetFileName(item.ToString)]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <Assign sap:VirtualizedContainerService.HintSize="460.8,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[pkgList]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[directory.GetDirectories(srcPath)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="460.8,382.4" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[pkgList]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Item is : &quot; + item.ToString + System.Environment.NewLine + &quot;Dest : &quot; + destPath + Path.GetFileName(item.ToString)]" />
+              <rt:CopyDirectory Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy Directory" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="CopyDirectory_1" Merge="True" Overwrite="False" Source="[item.ToString]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>

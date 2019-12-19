@@ -122,6 +122,16 @@
         "C:\\Users\\zulhu\\.nuget\\packages\\uipath.webapi.activities/1.4.4\\lib/net452/UiPath.Web.Activities.dll",
         "C:\\Users\\zulhu\\.nuget\\packages\\uipath.webapi.activities/1.4.4\\lib/net452/UiPath.Web.dll"
       ]
+    },
+    {
+      "Package": {
+        "Id": "Roboyo.Tools.Activities.CopyMoveDirectory",
+        "Version": "1.0.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\zulhu\\.nuget\\packages\\roboyo.tools.activities.copymovedirectory/1.0.0\\lib/Roboyo.Tools.CopyMoveDirectory.Design.dll",
+        "C:\\Users\\zulhu\\.nuget\\packages\\roboyo.tools.activities.copymovedirectory/1.0.0\\lib/Roboyo.Tools.CopyMoveDirectory.dll"
+      ]
     }
   ],
   "Conflicts": [],
@@ -219,6 +229,11 @@
     "RestSharp": {
       "Id": "RestSharp",
       "Version": "106.3.1",
+      "Dependencies": []
+    },
+    "Roboyo.Tools.Activities.CopyMoveDirectory": {
+      "Id": "Roboyo.Tools.Activities.CopyMoveDirectory",
+      "Version": "1.0.0",
       "Dependencies": []
     },
     "SharpZipLib": {

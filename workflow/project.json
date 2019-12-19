@@ -3,6 +3,7 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
+    "Roboyo.Tools.Activities.CopyMoveDirectory": "[1.0.0]",
     "UiPath.Excel.Activities": "[2.7.2]",
     "UiPath.Mail.Activities": "[1.7.2]",
     "UiPath.System.Activities": "[19.10.1]",

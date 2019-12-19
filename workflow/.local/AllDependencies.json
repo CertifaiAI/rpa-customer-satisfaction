@@ -211,6 +211,16 @@
           "lib/net452/RestSharp.dll": {}
         }
       },
+      "Roboyo.Tools.Activities.CopyMoveDirectory/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/Roboyo.Tools.CopyMoveDirectory.Design.dll": {},
+          "lib/Roboyo.Tools.CopyMoveDirectory.dll": {}
+        }
+      },
       "SharpZipLib/1.0.0": {
         "type": "package",
         "compile": {
@@ -1240,6 +1250,18 @@
         "restsharp.nuspec"
       ]
     },
+    "Roboyo.Tools.Activities.CopyMoveDirectory/1.0.0": {
+      "sha512": "zKOGjq6PXjN5iBozY5pHuTreXGdIK5O7ctb7WoCUsJrLAlhkDRXRZgqi101On8tt5lhAAYLeRdVnp1KkqYg7PA==",
+      "type": "package",
+      "path": "roboyo.tools.activities.copymovedirectory/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/Roboyo.Tools.CopyMoveDirectory.Design.dll",
+        "lib/Roboyo.Tools.CopyMoveDirectory.dll",
+        "roboyo.tools.activities.copymovedirectory.1.0.0.nupkg.sha512",
+        "roboyo.tools.activities.copymovedirectory.nuspec"
+      ]
+    },
     "SharpZipLib/1.0.0": {
       "sha512": "YuYztmY3jEb21F6e5LIPHJjApdtzdCPQ284UzsCKNfkgW71bukFHJES6RbKi+wm053XzFg0LX5/2vj/9gl8F/g==",
       "type": "package",
@@ -1784,6 +1806,7 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "Roboyo.Tools.Activities.CopyMoveDirectory >= 1.0.0 <= 1.0.0",
       "UiPath.Excel.Activities >= 2.7.2 <= 2.7.2",
       "UiPath.Mail.Activities >= 1.7.2 <= 1.7.2",
       "UiPath.System.Activities >= 19.10.1 <= 19.10.1",
@@ -1805,6 +1828,11 @@
     "frameworks": {
       "net461": {
         "dependencies": {
+          "Roboyo.Tools.Activities.CopyMoveDirectory": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.0, 1.0.0]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",
