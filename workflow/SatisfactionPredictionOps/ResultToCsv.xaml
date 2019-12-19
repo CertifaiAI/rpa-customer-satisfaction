@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_res" Type="InArgument(s:Char[])" />
     <x:Property Name="in_dataPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_workPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>721.6,1219.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>721.6,1259.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ResultToScv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -119,6 +120,6 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[resDT]" Delimitator="Comma" DisplayName="Write CSV" FilePath="C:\Users\zulhu\Desktop\skymindglobal\workflow\Output\prediction.csv" sap:VirtualizedContainerService.HintSize="660,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[resDT]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[in_workPath + &quot;\Output\prediction.csv&quot;]" sap:VirtualizedContainerService.HintSize="660,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
   </Sequence>
 </Activity>

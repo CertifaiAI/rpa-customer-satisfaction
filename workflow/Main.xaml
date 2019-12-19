@@ -50,8 +50,9 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="633.6,636.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:String" Default="C:\Users\zulhu\Desktop\skymindglobal\workflow\Orders\sample100.csv" Name="dataPath" />
+      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory() + &quot;\Orders\sample100.csv&quot;]" Name="dataPath" />
       <Variable x:TypeArguments="s:Char[]" Name="predRes" />
+      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory()]" Name="workPath" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -91,7 +92,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,266.4 300,323.6</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Wait.&quot;]">
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Waiting for Deployed Verticle{} in the terminal.&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -107,11 +108,11 @@
                   <av:PointCollection x:Key="ConnectorLocation">300,376.4 300,453.6</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Predict Review Score" sap:VirtualizedContainerService.HintSize="353.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SatisfactionPredictionOps/PredictReviewScore.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Predict Review Score" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SatisfactionPredictionOps/PredictReviewScore.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="in_dataPath">[dataPath]</InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_modelPath">[Directory.GetCurrentDirectory()+"\Model\review_score.h5"]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_workPath">[Directory.GetCurrentDirectory()]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_workPath">[workPath]</InArgument>
                   <OutArgument x:TypeArguments="s:Char[]" x:Key="out_res">[predRes]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
@@ -128,10 +129,11 @@
                       <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ResultToScv workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SatisfactionPredictionOps\ResultToScv.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ResultToScv workflow" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SatisfactionPredictionOps/ResultToCsv.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="s:Char[]" x:Key="in_res">[predRes]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_dataPath">[dataPath]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_workPath">[workPath]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
