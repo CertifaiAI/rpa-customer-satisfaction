@@ -1,0 +1,16 @@
+skyfield_data-0.1.0.dist-info/COPYING,sha256=sj9yG-adFMnwSGGP0-tbKrY1qBIyERCAhLWtkpSxVxk,1069
+skyfield_data-0.1.0.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+skyfield_data-0.1.0.dist-info/METADATA,sha256=L6CkAHscOafmEd1GJ1EtxCOxXzJU-TRA_TyblVD-L-s,5550
+skyfield_data-0.1.0.dist-info/RECORD,,
+skyfield_data-0.1.0.dist-info/WHEEL,sha256=8zNYZbwQSXoB9IfXOjPfeNwvAsALAjffgk27FqvCWbo,110
+skyfield_data-0.1.0.dist-info/top_level.txt,sha256=dLLsdMhP3dBnR2xZo--pCB3MAFC0kfOXCTLXOxmABwY,14
+skyfield_data/__init__.py,sha256=R0GLL-bMYpBf37K7KqQbP1YPfj_M9tjHi1Gd6T7I89E,541
+skyfield_data/__init__.pyc,,
+skyfield_data/data/Leap_Second.dat,sha256=BRODff-RtI29Pe5q-vqHa48OnkqJHvCtIKPKykPfeko,1352
+skyfield_data/data/de421.bsp,sha256=ogpxOdoEy8RiRUY0kY6anKaRJwROLMnU-cFuI40t7tw,16788480
+skyfield_data/data/deltat.data,sha256=5BT3GCXWUjLqwzjUqWxywQSed-dt-NczMt6xKyagrIM,11697
+skyfield_data/data/deltat.preds,sha256=MreKhDn0jzEhP4_KBdjYhkgHn1uLCkLD8nNIrQ4EZag,2237
+skyfield_data/expiration_data.py,sha256=rsKt9Q7ICWc-UHkT7VYQ2IFBrr_TImoUiYfPathNm8I,205
+skyfield_data/expiration_data.pyc,,
+skyfield_data/expirations.py,sha256=Z2n_aYYp3nK68aK7jwUYyTDLAshs2yzxQgmWNvEICSo,728
+skyfield_data/expirations.pyc,,

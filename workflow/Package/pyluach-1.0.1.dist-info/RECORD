@@ -1,0 +1,15 @@
+pyluach-1.0.1.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+pyluach-1.0.1.dist-info/METADATA,sha256=Y-BuUjuhz0dTqrI7QkdrP3OYgkQxDvQSVzNDexZ8Zhs,2547
+pyluach-1.0.1.dist-info/RECORD,,
+pyluach-1.0.1.dist-info/WHEEL,sha256=rhIUU3k_gV2iCypONLq-yw8hAvGuX-BoDgL_ovBiHW0,93
+pyluach-1.0.1.dist-info/top_level.txt,sha256=qDTB5xoNZvj4Q2mDted17xIYhIUDnVW923AowoN-ES4,8
+pyluach/__init__.py,sha256=RU4qmDBkuHY2CbDnRq41_gzro2C-GDM6YAxwTErsFPY,106
+pyluach/__init__.pyc,,
+pyluach/dates.py,sha256=Nf1u-IPnET1uU3y9u2raDBTsfeoqz-QnoijOZoAxw_o,21685
+pyluach/dates.pyc,,
+pyluach/hebrewcal.py,sha256=0J-Xszn76OtWRvH-CSAQv6Yvx3Av8viTctH-Uu4939I,11106
+pyluach/hebrewcal.pyc,,
+pyluach/parshios.py,sha256=ztnOA6u8KXw1ApSYcuvH8hoMdL29sO65ha1yEZl7DRE,6428
+pyluach/parshios.pyc,,
+pyluach/utils.py,sha256=JGsGbsqT8GQsK1a4jD45UI469VcpZ63jNoOFCmhzSgk,1565
+pyluach/utils.pyc,,
