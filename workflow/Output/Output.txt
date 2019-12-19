@@ -1,0 +1,1 @@
+This folder stores the output of the prediction in a CSV file by creating an additiona column to the riginal CSV file called "prediction"
