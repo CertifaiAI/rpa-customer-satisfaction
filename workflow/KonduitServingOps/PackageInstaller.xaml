@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>261.6,354.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>261.6,314.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PackageInstaller_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -67,13 +67,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Update keras to 2.3" FileName="C:\Windows\System32\cmd.exe" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="6605ce129ca8947a35a46ed9be800307" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' omit:title='Command Prompt' /&gt;">
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Update keras to 2.3" FileName="C:\Windows\System32\cmd.exe" sap:VirtualizedContainerService.HintSize="433.6,1205.6" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="6605ce129ca8947a35a46ed9be800307" Selector="&lt;wnd app='cmd.exe' cls='ConsoleWindowClass' omit:title='Command Prompt' /&gt;">
       <ui:OpenApplication.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="524.8,2126.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1058.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="check" />
               <Variable x:TypeArguments="s:String[]" Name="textArray" />
@@ -83,7 +83,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Type Into 'cmd.exe  Command Prompt'" sap:VirtualizedContainerService.HintSize="483.2,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[&quot;cd &quot; + in_workPath + &quot;\distro\conda\condabin&quot;]">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Type Into 'cmd.exe  Command Prompt'" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[&quot;cd &quot; + in_workPath + &quot;\distro\conda\condabin&quot;]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="7694b4f7789428e175340bf42eb98be5">
                   <ui:Target.TimeoutMS>
@@ -173,7 +173,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SendHotkey>
-            <DoWhile DisplayName="Check if installation is done" sap:VirtualizedContainerService.HintSize="483.2,1120.8" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+            <DoWhile DisplayName="Check if installation is done" sap:VirtualizedContainerService.HintSize="483.2,855.2" sap2010:WorkflowViewState.IdRef="DoWhile_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -181,7 +181,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <DoWhile.Condition>[Not check.Equals(in_workPath + "\distro\conda\condabin&gt;")]</DoWhile.Condition>
-              <Sequence sap:VirtualizedContainerService.HintSize="375.2,958.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="375.2,692.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,8 +233,6 @@
                     <InArgument x:TypeArguments="x:String">[textArray(textArray.Length-1)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Clipped text : &quot; + check]" />
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;WorkPath : &quot; + in_workPath]" />
               </Sequence>
             </DoWhile>
             <ui:CloseApplication DisplayName="Close Application" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
@@ -259,7 +257,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:OpenApplication>
-    <Sequence DisplayName="Copy packages" sap:VirtualizedContainerService.HintSize="502.4,969.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Copy packages" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -286,7 +284,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="False" Path="[item.ToString]" />
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[item.ToString]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
@@ -311,11 +309,12 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <rt:CopyDirectory Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy Directory" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="CopyDirectory_1" Merge="True" Overwrite="False" Source="[item.ToString]" />
+              <rt:CopyDirectory Destination="[destPath + Path.GetFileName(item.ToString)]" DisplayName="Copy Directory" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="CopyDirectory_1" Merge="True" Overwrite="True" Source="[item.ToString]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
+      <ui:WriteTextFile DisplayName="Write Text File" FileName="[destPath + &quot;PackagesInstalled.txt&quot;]" sap:VirtualizedContainerService.HintSize="460.8,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="The packages from the Package folder has been succesfully installed and copied to site-packages" />
     </Sequence>
   </Sequence>
 </Activity>

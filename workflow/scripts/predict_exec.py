@@ -13,11 +13,6 @@ import numpy as np
 import keras
 import tensorflow as tf
 
-#data_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\SampleOrder-10.csv'
-#data_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\translated.csv'
-#model_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction\my_model2.h5'
-#workspace_path = r'C:\Users\zulhu\Desktop\Customer Satisfaction Prediction'
-
 # needed when dealing with multi threading
 sess = tf.Session()
 keras.backend.set_session(sess)
@@ -46,8 +41,6 @@ class AttributesAdder(BaseEstimator, TransformerMixin):
         df = X.copy()
         
         # Calculate the estimated delivery time and actual delivery time in working days. 
-        # This would allow us to exclude hollidays that could influence delivery times.
-        # If the order_delivered_customer_date is null, it returns 0.
         df['wd_estimated_delivery_time'] = df.apply(lambda x: cal.get_working_days_delta(x.order_aproved_at, 
                                                                                       x.order_estimated_delivery_date), axis=1)
         df['wd_actual_delivery_time'] = df.apply(lambda x: cal.get_working_days_delta(x.order_aproved_at, 
