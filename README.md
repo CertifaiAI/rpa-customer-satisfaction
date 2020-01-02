@@ -20,8 +20,18 @@ After prediction is made, the RPA workflow will go through each unsatisfied cust
 
 ## How to Run the Workflow: 
 1. Clone this repo or download the zip file and extract it to your workspace.
-2. Download the [distro.zip](https://github.com/KonduitAI/mailboxdetection-workflow/releases/download/v1.1/distro.zip) and unzip to the root file directory. You can ignore this step if you want the workflow to download by itself.
-3. Run Main.xaml
+2. Download the [distro.zip](https://github.com/skymindglobal/rpa-customer-satisfaction/releases/tag/v.0.1/distro.zip) and unzip to the "workflow" file directory. You can ignore this step if you want the workflow to download by itself. The download and the unzip will take some time to be completed.
+3. Open Main.xaml
+4. Set the variables in the workflow to your configurations.
+	- dataPath: the CSV file which contains the order information. We have provided 3 sample order files in the "Orders" folder.
+	- senderEmail: the email from which the notification will be sent from.
+	- senderPassword: the password for the sender email.
+	- recipientEmail: the email of the "clients". For this workflow purpose, the recipient email is set manually as we do not have the emails of the clients.
+	
+![Variables](img/variables.PNG "Variables")
+5. Run Main.xaml
+6. The workflow predicts the satisfaction for each orders in the input file and produce prediction results in the folder "Output" in the file "predictions.csv"
+7. Based on this file, all the clients with orders that are unsatisfied will be emailed to enquire on the reason for their unsatisfaction.
 
 ## Model Serving :  
 Konduit-Serving is a serving system and framework focused on deploying machine learning pipelines to production.  
@@ -35,5 +45,5 @@ If you wish to know more about Konduit model serving, please refer to the below 
 If you encounter roadblocks in customizing your RPA & AI workflow, we strongly encourage you to reach us anytime!  
 
 ### **Webpage @ https://konduit.ai/**  
-### **contact page @ https://konduit.ai/contact/**  
-### **enquiry @ hello@konduit.ai** 
+### **Contact page @ https://konduit.ai/contact/**  
+### **Enquiry @ hello@konduit.ai** 

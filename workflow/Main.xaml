@@ -46,7 +46,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="664,753.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -55,9 +54,9 @@
       <Variable x:TypeArguments="s:Char[]" Name="predRes" />
       <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory()]" Name="workPath" />
       <Variable x:TypeArguments="sd:DataTable" Name="predDt" />
-      <Variable x:TypeArguments="x:String" Default="konduitdummy@gmail.com" Name="senderEmail" />
-      <Variable x:TypeArguments="x:String" Default="konduitdummy4test!" Name="senderPassword" />
-      <Variable x:TypeArguments="x:String" Default="zulhusni@skymind.my" Name="recipientEmail" />
+      <Variable x:TypeArguments="x:String" Default="sender@test.com" Name="senderEmail" />
+      <Variable x:TypeArguments="x:String" Default="senderPassword" Name="senderPassword" />
+      <Variable x:TypeArguments="x:String" Default="recipient@test.com" Name="recipientEmail" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -263,7 +262,7 @@
                               <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'java.exe '" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="bfb1ee8b0920d51f1ff55b2ff56db653" Selector="&lt;wnd app='java.exe' cls='ConsoleWindowClass' title='C:\Users\zulhu\Desktop\skymindglobal\workflow\distro\jdk\bin\jav*' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'java.exe '" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="bfb1ee8b0920d51f1ff55b2ff56db653" Selector="&lt;wnd app='java.exe' cls='ConsoleWindowClass' title='C:\Users\zulhu\Desktop\skymindglobal\workflow\distro\jdk\bin\jav*' /&gt;" WaitForReady="INTERACTIVE">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
