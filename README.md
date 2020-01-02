@@ -28,7 +28,7 @@ After prediction is made, the RPA workflow will go through each unsatisfied cust
 	- senderPassword: the password for the sender email.
 	- recipientEmail: the email of the "clients". For this workflow purpose, the recipient email is set manually as we do not have the emails of the clients.
 
-![Variables](workflow/img/variables.png "Variables")
+![Variables](img/variables.png "Variables")
 
 5. Run Main.xaml
 6. The workflow predicts the satisfaction for each orders in the input file and produce prediction results in the folder "Output" in the file "predictions.csv"
