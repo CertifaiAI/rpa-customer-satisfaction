@@ -1,11 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="EmailUnsatisfiedCustomer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="EmailUnsatisfiedCustomer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_predRes" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_recipientEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_senderPassword" Type="InArgument(x:String)" />
+    <x:Property Name="in_senderEmail" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>636,990.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>636,1321.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EmailUnsatisfiedCustomer_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -54,15 +57,11 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EmailUnsatisfiedCustomer" sap:VirtualizedContainerService.HintSize="616,930.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="EmailUnsatisfiedCustomer" sap:VirtualizedContainerService.HintSize="616,1240.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="filteredDt" />
-      <Variable x:TypeArguments="x:String" Default="zulhusni@skymind.my" Name="recipientEmail" />
-      <Variable x:TypeArguments="x:String" Default="konduitdummy4test!" Name="senderPassword" />
-      <Variable x:TypeArguments="x:String" Default="konduitdummy@gmail.com" Name="senderEmail" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="idx" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -70,6 +69,37 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="574.4,270.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <If Condition="[in_recipientEmail.Equals(string.Empty) Or in_senderEmail.Equals(string.Empty) Or in_senderPassword.Equals(string.Empty)]" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="If_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Throw Exception="[New BusinessRuleException(&quot;Sender or recipient email is not set. Please enter the required information in the variables of Main.xaml&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          </If.Then>
+        </If>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,105.6" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Throw Exception="[New BusinessRuleException(&quot;Sender or recipient email is not set. Please enter the required information in the variables of Main.xaml&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
     <ui:FilterDataTable DataTable="[in_predRes]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="574.4,60" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filteredDt]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -101,7 +131,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear customer,&quot; + System.Environment.NewLine + &#xD;&#xA;&quot;You have recently shown dissatisfaction with your latest purchase.&quot; + System.Environment.NewLine + &#xD;&#xA;&quot;If you have some time, could you describe in more details on the issues that you have encountered to help us in providing better services in the future.&quot; + System.Environment.NewLine + &#xD;&#xA;&quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="[senderEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="483.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[senderPassword]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Order Satisfaction Inquiry - Ecommerce (&quot; + System.DateTime.Now.ToString(&quot;dd-MMM-yyyy hh:mm:ss&quot;) + &quot;)&quot;]" To="[recipientEmail]">
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear customer,&quot; + System.Environment.NewLine + &#xA;&quot;You have recently shown dissatisfaction with your latest purchase.&quot; + System.Environment.NewLine + &#xA;&quot;If you have some time, could you describe in more details on the issues that you have encountered to help us in providing better services in the future.&quot; + System.Environment.NewLine + &#xA;&quot;Thank you&quot;]" DisplayName="Send SMTP Mail Message" Email="[in_senderEmail]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="483.2,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[in_senderPassword]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Order Satisfaction Inquiry - Ecommerce (&quot; + System.DateTime.Now.ToString(&quot;dd-MMM-yyyy hh:mm:ss&quot;) + &quot;)&quot;]" To="[in_recipientEmail]">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
               </ui:SendMail.Files>

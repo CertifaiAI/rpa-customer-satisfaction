@@ -1,0 +1,11 @@
+order_status,order_products_value,order_freight_value,order_items_qty,order_sellers_qty,order_purchase_timestamp,order_aproved_at,order_estimated_delivery_date,order_delivered_customer_date,customer_state,product_name_lenght,product_description_lenght,product_photos_qty,product_category_name_english
+delivered,16.9,9.34,1,1,11/4/2017 17:38,11/4/2017,17/11/2017,11/7/2017,SP,60,1069,1,furniture_decor
+delivered,79.99,16.81,1,1,27/5/2017 15:53,30/5/2017,28/6/2017,21/6/2017,PR,48,808,1,housewares
+canceled,117.3,22.92,1,2,5/12/2017 10:28,5/12/2017,6/5/2017,,ES,53,570,1,auto
+delivered,680.0,57.36,2,1,7/4/2018 23:17,7/5/2018,8/2/2018,13/7/2018,SP,29,1275,2,signaling_and_security
+delivered,49.0,37.97,1,2,23/11/2017 11:57,25/11/2017,18/12/2017,26/12/2017,MA,59,341,2,garden_tools
+delivered,239.98,89.28,2,1,26/7/2018 13:03,27/7/2018,16/8/2018,8/3/2018,SP,59,1893,1,computers_accessories
+delivered,59.99,18.0,1,1,6/8/2018 12:20,6/8/2018,26/6/2018,15/6/2018,MG,57,614,1,health_beauty
+delivered,28.9,18.23,1,1,14/5/2018 13:39,15/5/2018,6/4/2018,21/5/2018,SC,60,933,6,cool_stuff
+delivered,149.0,21.53,1,1,24/2/2018 18:49,24/2/2018,20/3/2018,13/3/2018,PR,51,429,1,housewares
+delivered,39.9,15.23,1,1,20/3/2018 20:12,20/3/2018,4/9/2018,26/3/2018,SP,49,378,5,fashion_bags_accessories

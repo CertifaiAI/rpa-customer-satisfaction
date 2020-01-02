@@ -1,0 +1,3 @@
+# Ignore local distro folder
+workflow/distro/
+workflow/Output/prediction.csv

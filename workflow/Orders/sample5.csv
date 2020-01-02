@@ -1,0 +1,6 @@
+order_status,order_products_value,order_freight_value,order_items_qty,order_sellers_qty,order_purchase_timestamp,order_aproved_at,order_estimated_delivery_date,order_delivered_customer_date,customer_state,product_name_lenght,product_description_lenght,product_photos_qty,product_category_name_english
+delivered,49.0,2.75,1,1,3/1/2018 13:52,3/1/2018,21/3/2018,13/3/2018,PR,60,379,3,watches_gifts
+delivered,180.0,24.24,2,1,14/6/2018 14:13,14/6/2018,28/6/2018,16/6/2018,DF,48,594,1,health_beauty
+delivered,250.0,85.16,1,1,7/1/2018 13:43,7/1/2018,31/7/2018,7/11/2018,SC,53,904,1,furniture_decor
+delivered,89.8,18.0,1,1,16/10/2017 19:01,16/10/2017,23/11/2017,28/10/2017,RJ,55,889,1,toys
+delivered,199.99,111.22,1,1,13/11/2017 15:32,13/11/2017,12/12/2017,30/11/2017,CE,30,592,2,furniture_decor

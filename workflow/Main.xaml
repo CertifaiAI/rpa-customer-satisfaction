@@ -51,10 +51,13 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="Flowchart" sap:VirtualizedContainerService.HintSize="664,753.6" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory() + &quot;\Orders\sample100.csv&quot;]" Name="dataPath" />
+      <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory() + &quot;\Orders\sample10.csv&quot;]" Name="dataPath" />
       <Variable x:TypeArguments="s:Char[]" Name="predRes" />
       <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory()]" Name="workPath" />
       <Variable x:TypeArguments="sd:DataTable" Name="predDt" />
+      <Variable x:TypeArguments="x:String" Default="konduitdummy@gmail.com" Name="senderEmail" />
+      <Variable x:TypeArguments="x:String" Default="konduitdummy4test!" Name="senderPassword" />
+      <Variable x:TypeArguments="x:String" Default="zulhusni@skymind.my" Name="recipientEmail" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -96,7 +99,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,274.4 300,323.6</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Check if server has started" sap:VirtualizedContainerService.HintSize="600,1188" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Check if server has started" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="cmdText" />
               <Variable x:TypeArguments="s:String[]" Name="textArray" />
@@ -241,6 +244,9 @@
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Email" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SatisfactionPredictionOps\EmailUnsatisfiedCustomer.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_predRes">[predDt]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_recipientEmail">[recipientEmail]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_senderPassword">[senderPassword]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_senderEmail">[senderEmail]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
