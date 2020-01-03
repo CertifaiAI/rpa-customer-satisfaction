@@ -19,20 +19,26 @@ After prediction is made, the RPA workflow will go through each unsatisfied cust
 **EmailUnsatisfiedCustomer.xaml:** Automatically emails each customer which are unsatisfied with their purchase based on the predictions given by the AI model. For this demo however, the recipient email is fixed in the workflow instead of actual customer emails and a maximum of 5 emails are sent. You can change the recipient email from this workflow under the variable sections of UiPath Studio.
 
 ## How to Run the Workflow: 
-1. Clone this repo or download the zip file and extract it to your workspace.
+1. Clone this [repo](https://github.com/skymindglobal/rpa-customer-satisfaction) or download the zip file and extract it to your workspace.
 2. Download the [distro.zip](https://github.com/skymindglobal/rpa-customer-satisfaction/releases/tag/v.0.1/distro.zip) and unzip to the "workflow" file directory. You can ignore this step if you want the workflow to download by itself. The download and the unzip will take some time to be completed.
-3. Open Main.xaml
+3. Open Main.xaml.
 4. Set the variables in the workflow to your configurations.
-	- dataPath: the CSV file which contains the order information. We have provided 3 sample order files in the "Orders" folder.
-	- senderEmail: the email from which the notification will be sent from.
-	- senderPassword: the password for the sender email.
-	- recipientEmail: the email of the "clients". For this workflow purpose, the recipient email is set manually as we do not have the emails of the clients.
+	- **dataPath:** the CSV file which contains the order information. We have provided 3 sample order files in the "Orders" folder.
+	- **senderEmail:** the email from which the notification will be sent from.
+	- **senderPassword:** the password for the sender email.
+	- **recipientEmail:** the email of the "clients". For this workflow purpose, the recipient email is set manually as we do not have the emails of the clients.
 
 ![Variables](img/variables.png "Variables")
 
-5. Run Main.xaml
-6. The workflow predicts the satisfaction for each orders in the input file and produce prediction results in the folder "Output" in the file "predictions.csv"
-7. Based on this file, all the clients with orders that are unsatisfied will be emailed to enquire on the reason for their unsatisfaction.
+5. Run Main.xaml.
+6. For the first run of the workflow, it will download the Konduit serving files and extract them to the work folder. This section will take some time (around 30 minutes) to complete.
+7. The workflow predicts the satisfaction for each orders in the input file and produce prediction results in the folder "Output" in the file "predictions.csv".
+
+![Predictions](img/predictions.png "Predictions")
+
+8. Based on this file, all the clients with orders that are unsatisfied will be emailed to enquire on the reason for their unsatisfaction.
+
+![Emails](img/email.png "Emails")
 
 ## Model Serving :  
 Konduit-Serving is a serving system and framework focused on deploying machine learning pipelines to production.  

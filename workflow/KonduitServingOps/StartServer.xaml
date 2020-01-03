@@ -48,7 +48,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Start Server" sap:VirtualizedContainerService.HintSize="416.8,1024.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -97,7 +96,7 @@
       </Assign.Value>
     </Assign>
     <ui:PathExists DisplayName="Ensure the server is downloaded, if not download it" Exists="[distroExists]" sap:VirtualizedContainerService.HintSize="375.2,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[distroDir]" PathType="Folder" />
-    <If Condition="[distroExists]" DisplayName="Start the server after setting it up if needed" sap:VirtualizedContainerService.HintSize="519.2,330.4" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[distroExists]" DisplayName="Download konduit server if needed" sap:VirtualizedContainerService.HintSize="375.2,52.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
