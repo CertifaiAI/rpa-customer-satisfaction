@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="StartProcess" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="436.8,1084.8" sap2010:WorkflowViewState.IdRef="StartProcess_2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="StartProcess" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="436.8,1177.6" sap2010:WorkflowViewState.IdRef="StartProcess_2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -51,7 +51,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Start Server" sap:VirtualizedContainerService.HintSize="416.8,1024.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Start Server" sap:VirtualizedContainerService.HintSize="416.8,1248" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="distroExists" />
       <Variable x:TypeArguments="x:String" Default="[distroDir + &quot;\jdk\bin\java.exe -d64 -cp ai.skymind.pipelines.configprovider.PipelineServerMain &quot; + distroDir + &quot;\pipelines.jar&quot;]" Name="javaFile" />
@@ -59,6 +59,7 @@
       <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory()  +  &quot;\distro&quot;]" Name="distroDir" />
       <Variable x:TypeArguments="x:String" Name="workspaceDir" />
       <Variable x:TypeArguments="x:String" Default="https://github.com/skymindglobal/rpa-customer-satisfaction/releases/tag/v.1.1" Name="distroURL" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\zulhu\Desktop\skymindglobal\workflow\Model\review_score.h5" Name="modelPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -97,8 +98,25 @@
         <InArgument x:TypeArguments="x:String" xml:space="preserve">["-d64 -cp  " + distroDir + "\konduit-serving.jar ai.konduit.serving.configprovider.KonduitServingMain"  + " --configPath "  + workspaceDir + "\Config\inference-satisfaction-config.json"]</InArgument>
       </Assign.Value>
     </Assign>
+    <ui:PathExists DisplayName="Ensure the model is downloaded, if not download it" Exists="[distroExists]" sap:VirtualizedContainerService.HintSize="375.2,90.4" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[modelPath]" PathType="File" />
+    <If Condition="[distroExists]" DisplayName="Download model if needed" sap:VirtualizedContainerService.HintSize="375.2,52.8" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Else>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke DownloadModel workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Model\DownloadModel.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="x:String" x:Key="in_FileURL">[distroURL]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_ModelPath">[modelPath]</InArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+      </If.Else>
+    </If>
     <ui:PathExists DisplayName="Ensure the server is downloaded, if not download it" Exists="[distroExists]" sap:VirtualizedContainerService.HintSize="375.2,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[distroDir]" PathType="Folder" />
-    <If Condition="[distroExists]" DisplayName="Download konduit server if needed" sap:VirtualizedContainerService.HintSize="519.2,330.4" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[distroExists]" DisplayName="Download konduit server if needed" sap:VirtualizedContainerService.HintSize="375.2,52.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
