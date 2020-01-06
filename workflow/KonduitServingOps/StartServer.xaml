@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="StartProcess" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="436.8,1177.6" sap2010:WorkflowViewState.IdRef="StartProcess_2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="StartProcess" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="436.8,1308" sap2010:WorkflowViewState.IdRef="StartProcess_2" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -48,7 +48,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Start Server" sap:VirtualizedContainerService.HintSize="416.8,1248" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -58,7 +57,7 @@
       <Variable x:TypeArguments="x:String" Default="[&quot; --configPath &quot;  + distroDir + &quot;\inference-image-config.json&quot;]" Name="args" />
       <Variable x:TypeArguments="x:String" Default="[Directory.GetCurrentDirectory()  +  &quot;\distro&quot;]" Name="distroDir" />
       <Variable x:TypeArguments="x:String" Name="workspaceDir" />
-      <Variable x:TypeArguments="x:String" Default="https://github.com/skymindglobal/rpa-customer-satisfaction/releases/tag/v.1.1" Name="distroURL" />
+      <Variable x:TypeArguments="x:String" Default="https://github.com/skymindglobal/rpa-customer-satisfaction/releases/tag/v.1.2" Name="distroURL" />
       <Variable x:TypeArguments="x:String" Default="C:\Users\zulhu\Desktop\skymindglobal\workflow\Model\review_score.h5" Name="modelPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
