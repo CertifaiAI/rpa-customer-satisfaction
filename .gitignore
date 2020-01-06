@@ -2,3 +2,4 @@
 workflow/distro/
 workflow/Output/prediction.csv
 workflow/.screenshots/
+workflow/Model/review_score.h5
